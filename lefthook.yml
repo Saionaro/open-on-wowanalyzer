@@ -9,4 +9,4 @@ pre-commit:
     prettier:
       files: git diff --name-only @{push}
       glob: "*.{js,css}"
-      run: prettier --write
+      run: prettier src/**/*.js --write
