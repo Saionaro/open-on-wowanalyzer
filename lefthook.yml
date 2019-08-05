@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  commands:
+    linter:
+      files: git diff --name-only @{push}
+      glob: "*.{js,css}"
+      run: yarn lint {files} --fix
+
+    prettier:
+      files: git diff --name-only @{push}
+      glob: "*.{js,css}"
+      run: prettier --write
