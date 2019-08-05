@@ -1,4 +1,8 @@
-const WOWANALYZER_URL = "https://wowanalyzer.com/report/";
+import { constructURL } from "./lib/url-constructor";
+
+const WOWANALYZER_URL = "https://wowanalyzer.com";
+const UNKNOWN_ERROR =
+  "Unknown error found. Please, contact the developer with details.";
 
 const button = document.createElement("button");
 const menu = document.getElementById("main-menu");
@@ -9,8 +13,11 @@ button.innerHTML = "Open On Wowanalyzer";
 menu.appendChild(button);
 
 button.addEventListener("click", () => {
-  const parts = location.href.split("/reports/");
-  const parts2 = parts[1].split("#");
+  const wowAnalyzerUrl = constructURL(location.href);
 
-  window.open(`${WOWANALYZER_URL}${parts2[0]}`, "_blank");
+  if (wowAnalyzerUrl) {
+    window.open(`${WOWANALYZER_URL}${wowAnalyzerUrl}`, "_blank");
+  } else {
+    alert(UNKNOWN_ERROR);
+  }
 });
