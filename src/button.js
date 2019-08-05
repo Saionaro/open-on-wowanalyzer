@@ -4,7 +4,7 @@ const WOWANALYZER_URL = "https://wowanalyzer.com";
 const UNKNOWN_ERROR =
   "Unknown error found. Please, contact the developer with details.";
 
-const button = document.createElement('button');
+const button = document.createElement("button");
 const menu = document.getElementById("main-menu");
 
 button.className = "oow-button";
