@@ -55,9 +55,7 @@ export function constructURL(value) {
     getCharacterFromWCLUrl(value) || getCharacterFromBattleNetUrl(value);
 
   if (character) {
-    const constructedUrl = `/character/${character.region}/${character.realm}/${
-      character.name
-    }`;
+    const constructedUrl = `/character/${character.region}/${character.realm}/${character.name}`;
 
     return constructedUrl;
   }

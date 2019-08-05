@@ -1,5 +1,4 @@
 pre-commit:
-  parallel: true
   commands:
     linter:
       files: git diff --name-only @{push}
@@ -9,4 +8,7 @@ pre-commit:
     prettier:
       files: git diff --name-only @{push}
       glob: "*.{js,css}"
-      run: prettier src/**/*.js --write
+      run: prettier {files} --write
+
+    add:
+      run: git add .
